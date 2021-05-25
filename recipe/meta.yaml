@@ -41,7 +41,7 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=gamm4
-  license: GPL (>= 2)
+  license: GPL-2.0-or-later
   summary: Estimate generalized additive mixed models via a version of function gamm() from 'mgcv', using 'lme4' for estimation.
   license_family: GPL3
   license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
