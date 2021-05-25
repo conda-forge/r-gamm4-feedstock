@@ -3,7 +3,7 @@ About r-gamm4
 
 Home: https://CRAN.R-project.org/package=gamm4
 
-Package license: GPL (>= 2)
+Package license: GPL-2.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-gamm4-feedstock/blob/master/LICENSE.txt)
 
