@@ -1,11 +1,11 @@
-About r-gamm4
-=============
+About r-gamm4-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-gamm4-feedstock/blob/main/LICENSE.txt)
 
 Home: https://CRAN.R-project.org/package=gamm4
 
 Package license: GPL-2.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-gamm4-feedstock/blob/main/LICENSE.txt)
 
 Summary: Estimate generalized additive mixed models via a version of function gamm() from 'mgcv', using 'lme4' for estimation.
 
