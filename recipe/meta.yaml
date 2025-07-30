@@ -21,16 +21,17 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
-    - r-matrix
-    - r-lme4 >=0.999375_31
-    - r-mgcv >=1.7_23
+    - r-matrix >=1.7_0
+    - r-lme4 >=1.0
+    - r-mgcv >=1.9_2
   run:
     - r-base
-    - r-matrix
-    - r-lme4 >=0.999375_31
-    - r-mgcv >=1.7_23
+    - r-matrix >=1.7_0
+    - r-lme4 >=1.0
+    - r-mgcv >=1.9_2
 
 test:
   commands:
@@ -42,7 +43,8 @@ about:
   license: GPL-2.0-or-later
   summary: Estimate generalized additive mixed models via a version of function gamm() from 'mgcv', using 'lme4' for estimation.
   license_family: GPL3
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
