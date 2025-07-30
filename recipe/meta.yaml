@@ -1,4 +1,4 @@
-{% set version = "0.2-6" %}
+{% set version = "0.2-7" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/gamm4_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/gamm4/gamm4_{{ version }}.tar.gz
-  sha256: 57c5b66582b2adc32f6a3bb6a259f5b95198e283a96d966a6007e8e48b380c89
+  sha256: bacc343c19395f54e45f2a5344a2ee2dd2d8e8ce022eaf2b5eff6ea1e4acaedf
 
 build:
-  number: 4
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -21,16 +21,17 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
-    - r-base
-    - r-matrix
-    - r-lme4 >=0.999375_31
-    - r-mgcv >=1.7_23
+    - r-base >=4.4.0  # r-matrix needs r-base >=4.4
+    - r-matrix >=1.7_0
+    - r-lme4 >=1.0
+    - r-mgcv >=1.9_2
   run:
-    - r-base
-    - r-matrix
-    - r-lme4 >=0.999375_31
-    - r-mgcv >=1.7_23
+    - r-base >=4.4.0  # r-matrix needs r-base >=4.4
+    - r-matrix >=1.7_0
+    - r-lme4 >=1.0
+    - r-mgcv >=1.9_2
 
 test:
   commands:
@@ -42,7 +43,8 @@ about:
   license: GPL-2.0-or-later
   summary: Estimate generalized additive mixed models via a version of function gamm() from 'mgcv', using 'lme4' for estimation.
   license_family: GPL3
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
