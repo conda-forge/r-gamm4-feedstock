@@ -23,12 +23,12 @@ requirements:
     - {{ posix }}zip               # [win]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
-    - r-base >=4.4.0  # r-matrix needs r-base >=4.4
+    - r-base
     - r-matrix >=1.7_0
     - r-lme4 >=1.0
     - r-mgcv >=1.9_2
   run:
-    - r-base >=4.4.0  # r-matrix needs r-base >=4.4
+    - r-base
     - r-matrix >=1.7_0
     - r-lme4 >=1.0
     - r-mgcv >=1.9_2
